@@ -16,6 +16,9 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'application.modules.user.models.*',
+		'application.modules.user.controllers.*',
+		'application.modules.user.components.*',
 	),
 
 	'modules'=>array(
@@ -28,6 +31,18 @@ return array(
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
 		*/
+		'user'=>array(
+			'hash'=>'md5',
+			'sendActivationMail'=>true,
+			'loginNotActiv'=>false,
+			'activeAfterRegister'=>false,
+			'autoLogin'=>true,
+			'registrationUrl'=>array('/user/registration'),
+			'recoveryUrl'=>array('/user/recovery'),
+			'loginUrl'=>array('/user/login'),
+			'returnUrl'=>array('/user/profile'),
+			'returnLogoutUrl'=>array('/user/login'),
+		),
 	),
 
 	// application components
@@ -35,6 +50,8 @@ return array(
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
+			'class'=>'WebUser',
+			'loginUrl'=>array('/user/login'),
 		),
 		// uncomment the following to enable URLs in path-format
 		/*
@@ -48,7 +65,9 @@ return array(
 		),
 		*/
 		'db'=>array(
-			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
+			//'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
+			'tablePrefix' => 'tbl_',
+			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/user.db',
 		),
 		// uncomment the following to use a MySQL database
 		/*
