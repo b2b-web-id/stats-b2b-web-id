@@ -4,17 +4,10 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
+<h1>Selamat datang di <i>Pusat Data B2B.Web.ID</i></h1>
+<p>Pusat data ini dikembangkan dengan teknologi merdeka. Pemrograman menggunakan PHP, dan basis data
+sqlite dengan metode pengembangan menggunakan github.</p>
+<p>Pusat data ini dikembangkan oleh <b>B2B.Web.ID</b> sebagai dukungan data dan analisis yang matang
+untuk menentukan arah pengembangan.</p>
 
-<p>Congratulations! You have successfully created your Yii application.</p>
 
-<p>You may change the content of this page by modifying the following two files:</p>
-<ul>
-	<li>View file: <code><?php echo __FILE__; ?></code></li>
-	<li>Layout file: <code><?php echo $this->getLayoutFile('main'); ?></code></li>
-</ul>
-
-<p>For more details on how to further develop this application, please read
-the <a href="http://www.yiiframework.com/doc/">documentation</a>.
-Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-should you have any questions.</p>
